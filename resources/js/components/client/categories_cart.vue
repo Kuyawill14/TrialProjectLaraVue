@@ -3,6 +3,7 @@
   <div class="main_conatainer container-fluid">
     <div class="row">
       <div class="col">
+    
         <h3 style="font-family:impact;color:#ef4a40">Our Bikes</h3>
       </div>
       <div class="col text-right mb-2">
@@ -40,14 +41,17 @@
             style="font-family:impact;color:#ef4a40"
           >{{item.category}}</h3>
           <div class="row item_row">
+
             <span
-              v-for="bike in data.bikes"
-              :key="bike.id"
+              v-for="(bike, index1) in data.bikes[index]"
+              :key="index1"
             >
+       
               <div
-                v-if="bike.bike_category_categ_id == item.categ_id && bike.availability == 'Available'"
+           
                 class="col-sm-12"
               >
+
                 <div class="col-item">
                   <div class="photo">
                     <img
@@ -189,22 +193,74 @@
 export default {
   data() {
     return {
+      counter: 0,
       data: [],
-      details: []
+      details: [],
+      category1: [],
+      bikes1: {},
+      tempbikes: [],
+      tempbikes2: []
     };
   },
   methods: {
+    addCounter() {
+      this.counter++;
+    },
     getData() {
       axios
-        .get("/api/page/all")
+        .get("/api/page/sample")
         .then(response => {
           this.data = response.data;
+          //this.bikes = response.data.bikes[0];
           console.log(this.data);
+
+          this.tempbikes = response.data.bikes;
+          this.category1 = response.data.category;
+          let l1 = response.data.bikes.length;
+          let l2 = response.data.category.length;
+
+         
+     
         })
         .catch(function(error) {
           console.log(error);
         });
     },
+     /* getData() {
+      axios
+        .get("/api/page/all")
+        .then(response => {
+          this.data = response.data;
+          //this.bikes = response.data.bikes[0];
+
+          this.tempbikes = response.data.bikes;
+          this.category1 = response.data.category;
+          let l1 = response.data.bikes.length;
+          let l2 = response.data.category.length;
+
+         
+     
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }, */
+    /*    getInfo(){
+      this.bikes = this.data.bikes;
+       for (let index = 0; index <  this.data.category; index++) {
+            let counter = 0;
+        
+            this.category[index] = this.data.category[index];
+            for (let i = 0; i < this.data.bikes.length; i++) {
+              if(this.data.bikes[i].bike_category_categ_id == this.data.category[index].categ_id && counter < 4){
+
+                  this.bikes[i] = this.data.bikes[i];
+              }
+              counter++;
+            } 
+          }
+          console.log(this.data);
+    }, */
     RentBike(id) {
       console.log(id);
 
@@ -338,7 +394,7 @@ export default {
   }
   .col-item {
     margin-bottom: 1rem;
-    width: 14rem;
+    width: 12.4rem;
   }
 }
 
@@ -351,7 +407,7 @@ export default {
   }
   .col-item {
     margin-bottom: 1rem;
-    width: 16rem;
+    width: 15rem;
   }
 }
 
@@ -361,21 +417,25 @@ export default {
   }
 
   .item_row {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     margin-top: 1rem;
   }
   .col-item {
-    margin-bottom: 1rem;
-    width: 13rem;
+    margin-bottom: 0.5rem;
+    width: 9rem;
   }
+  .col-item .photo img {
+  margin: 0 auto;
+  width: 80%;
+}
 }
 @media only screen and (min-width: 992px) {
   .main_conatainer {
-    padding: 0 1rem 0 2rem;
+    padding: 0 2rem 0 2rem;
   }
 
   .item_row {
-    margin-left: 1rem;
+    margin-left: 0px;
     margin-top: 1rem;
   }
   .col-item {
@@ -385,7 +445,7 @@ export default {
 }
 @media only screen and (min-width: 1200px) {
   .main_conatainer {
-    padding: 0 15rem 0 18rem;
+    padding: 0 10rem 0 15rem;
   }
   .click_link {
     cursor: pointer;

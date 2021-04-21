@@ -77,6 +77,8 @@ Route::prefix('/category')->group(function () {
 Route::prefix('/page')->group(function () {
     //User Controller
     Route::get('/all', [LandingPageController::class, 'index']);
+    Route::get('/sample', [LandingPageController::class, 'sample']);
+    
     Route::get('/search/{id}', [LandingPageController::class, 'show']);
     Route::post('/update/{id}', [BikeCategoryController::class, 'update']);
     Route::delete('/{id}', [BikeCategoryController::class, 'destroy']);

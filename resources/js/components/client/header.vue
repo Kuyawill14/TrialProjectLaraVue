@@ -115,7 +115,7 @@
 
     <Cart />
 
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <footer class="pt-4 my-md-5 pt-md-5 border-top pl-3 pr-3">
       <div class="row">
         <div class="col-12 col-md">
           <img
@@ -536,9 +536,10 @@ li {
 @media only screen and (min-width: 768px) {
   .bg {
     height: 38vh;
+    
     margin-bottom: 1rem;
   }
-   .nav_container {
+  .nav_container {
     padding: 0;
   }
   .nav_position {
@@ -557,12 +558,12 @@ li {
     max-width: 50vw;
     border-radius: 2.7rem / 100%;
   }
-    .signin {
+  .signin {
     min-width: 5rem;
     max-width: 50vw;
     font-weight: bolder;
   }
-   .signup {
+  .signup {
     background-color: white;
     font-weight: bolder;
     min-width: 5rem;
@@ -628,8 +629,8 @@ li {
     height: 35vh;
     margin-bottom: 1rem;
   }
-   .nav_container {
-    padding: 0;
+  .nav_container {
+    padding: 0 4rem 0 3rem;
   }
   .nav_position {
     margin-top: 1rem;
@@ -655,12 +656,12 @@ li {
       0 22.3px 17.9px rgba(0, 0, 0, 0.072);
     transition: 0.3s;
   }
-    .signin {
+  .signin {
     min-width: 5rem;
     max-width: 50vw;
     font-weight: bolder;
   }
-   .signup {
+  .signup {
     background-color: white;
     font-weight: bolder;
     min-width: 5rem;

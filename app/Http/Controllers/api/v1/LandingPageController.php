@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Bikes;
 use App\Models\BikeCategory;
+use Illuminate\Support\Facades\DB;
 
 class LandingPageController extends Controller
 {
@@ -17,9 +18,49 @@ class LandingPageController extends Controller
      */
     public function index()
     {
+     
         $category = BikeCategory::withCount('bikes')->get();
-        $bikes = Bikes::all();
-        return ["category"=>$category, "bikes"=>$bikes];
+        $bikes = Bikes::all()->shuffle();
+        
+        $data = $category->shuffle();
+
+        return ["category"=>$data, "bikes"=>$bikes];
+    }
+
+     public function sample()
+    {
+     
+      
+        $category = BikeCategory::withCount('bikes')->get();
+         $bikes = Bikes::all()->shuffle();
+         $data = $category->shuffle();
+
+        $tempCategory = array();
+        $tempBikes1 = array();
+        $tempBikes2 = array();
+
+        foreach ($data as $p) {
+              $tempBikes1 = array();
+            $counter = 0;
+            if($p->bikes_count > 0){
+                 
+                   $tempCategory[] = $p;
+                  foreach ($bikes as $a) {
+                    if($a->bike_category_categ_id == $p->categ_id && $a->availability == "Available"  && $counter < 4){
+                        $tempBikes1[] = $a;
+                        $counter++;  
+                    }
+                    
+                  }
+                   $tempBikes2[] = $tempBikes1;
+            }
+           
+
+            
+        }
+
+           return ["category"=>$tempCategory, "bikes"=>$tempBikes2];
+
     }
 
     /**

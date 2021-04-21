@@ -2111,24 +2111,75 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      counter: 0,
       data: [],
-      details: []
+      details: [],
+      category1: [],
+      bikes1: {},
+      tempbikes: [],
+      tempbikes2: []
     };
   },
   methods: {
+    addCounter: function addCounter() {
+      this.counter++;
+    },
     getData: function getData() {
       var _this = this;
 
-      axios.get("/api/page/all").then(function (response) {
-        _this.data = response.data;
+      axios.get("/api/page/sample").then(function (response) {
+        _this.data = response.data; //this.bikes = response.data.bikes[0];
+
         console.log(_this.data);
+        _this.tempbikes = response.data.bikes;
+        _this.category1 = response.data.category;
+        var l1 = response.data.bikes.length;
+        var l2 = response.data.category.length;
       })["catch"](function (error) {
         console.log(error);
       });
     },
+
+    /* getData() {
+     axios
+       .get("/api/page/all")
+       .then(response => {
+         this.data = response.data;
+         //this.bikes = response.data.bikes[0];
+           this.tempbikes = response.data.bikes;
+         this.category1 = response.data.category;
+         let l1 = response.data.bikes.length;
+         let l2 = response.data.category.length;
+          
+    
+       })
+       .catch(function(error) {
+         console.log(error);
+       });
+    }, */
+
+    /*    getInfo(){
+      this.bikes = this.data.bikes;
+       for (let index = 0; index <  this.data.category; index++) {
+            let counter = 0;
+        
+            this.category[index] = this.data.category[index];
+            for (let i = 0; i < this.data.bikes.length; i++) {
+              if(this.data.bikes[i].bike_category_categ_id == this.data.category[index].categ_id && counter < 4){
+                    this.bikes[i] = this.data.bikes[i];
+              }
+              counter++;
+            } 
+          }
+          console.log(this.data);
+    }, */
     RentBike: function RentBike(id) {
       var _this2 = this;
 
@@ -8093,7 +8144,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.main_conatainer[data-v-2053fdaa] {\r\n  padding: 0 15rem 0 18rem;\n}\n.click_link[data-v-2053fdaa] {\r\n  cursor: pointer;\n}\n.item_row[data-v-2053fdaa] {\r\n  margin-left: 1rem;\n}\n.col-item[data-v-2053fdaa] {\r\n  border: 1px solid #e1e1e1;\r\n  border-radius: 5px;\r\n  background: #fff;\r\n  margin-bottom: 1rem;\r\n  width: 15.3rem;\n}\n.col-item .photo img[data-v-2053fdaa] {\r\n  margin: 0 auto;\r\n  width: 100%;\n}\n.col-item .info[data-v-2053fdaa] {\r\n  padding: 10px;\r\n  border-radius: 0 0 5px 5px;\r\n  margin-top: 1px;\n}\n.col-item:hover .info[data-v-2053fdaa] {\r\n  background-color: #f5f5dc;\n}\n.col-item .price[data-v-2053fdaa] {\r\n  /*width: 50%;*/\r\n  float: left;\r\n  margin-top: 5px;\n}\n.col-item .price h5[data-v-2053fdaa] {\r\n  line-height: 20px;\r\n  margin: 0;\n}\n.price-text-color[data-v-2053fdaa] {\r\n  color: red;\n}\n.col-item .info .rating[data-v-2053fdaa] {\r\n  color: #777;\n}\n.col-item .rating[data-v-2053fdaa] {\r\n  /*width: 50%;*/\r\n  float: left;\r\n  font-size: 10px;\r\n  text-align: right;\r\n  line-height: 52px;\r\n  margin-bottom: 10px;\r\n  height: 30px;\n}\n.col-item .separator[data-v-2053fdaa] {\r\n  border-top: 1px solid #e1e1e1;\n}\n.clear-left[data-v-2053fdaa] {\r\n  clear: left;\n}\n.col-item .separator p[data-v-2053fdaa] {\r\n  line-height: 20px;\r\n  margin-bottom: 0;\r\n  margin-top: 10px;\r\n  text-align: center;\n}\n.col-item .separator p i[data-v-2053fdaa] {\r\n  margin-right: 5px;\n}\n.col-item .btn-add[data-v-2053fdaa] {\r\n  width: 50%;\r\n  float: left;\n}\n.col-item .btn-add[data-v-2053fdaa] {\r\n  border-right: 1px solid #e1e1e1;\n}\n.col-item .btn-details[data-v-2053fdaa] {\r\n  width: 50%;\r\n  float: left;\r\n  padding-left: 10px;\n}\n.controls[data-v-2053fdaa] {\r\n  margin-top: 20px;\n}\n[data-slide=\"prev\"][data-v-2053fdaa] {\r\n  margin-right: 10px;\n}\n@media only screen and (max-width: 600px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 1rem 0 1.5rem;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 0rem;\n}\n.col-item[data-v-2053fdaa] {\r\n    margin-bottom: 1rem;\r\n    width: 14rem;\n}\n}\n@media only screen and (min-width: 600px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 1rem 0 2rem;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 0px;\n}\n.col-item[data-v-2053fdaa] {\r\n    margin-bottom: 1rem;\r\n    width: 16rem;\n}\n}\n@media only screen and (min-width: 768px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 1rem 0 2rem;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 1rem;\r\n    margin-top: 1rem;\n}\n.col-item[data-v-2053fdaa] {\r\n    margin-bottom: 1rem;\r\n    width: 13rem;\n}\n}\n@media only screen and (min-width: 992px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 1rem 0 2rem;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 1rem;\r\n    margin-top: 1rem;\n}\n.col-item[data-v-2053fdaa] {\r\n    margin-bottom: 1rem;\r\n    width: 13rem;\n}\n}\n@media only screen and (min-width: 1200px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 15rem 0 18rem;\n}\n.click_link[data-v-2053fdaa] {\r\n    cursor: pointer;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 1rem;\n}\n.col-item[data-v-2053fdaa] {\r\n    border: 1px solid #e1e1e1;\r\n    border-radius: 5px;\r\n    background: #fff;\r\n    margin-bottom: 1rem;\r\n    width: 15.3rem;\n}\n.col-item .photo img[data-v-2053fdaa] {\r\n    margin: 0 auto;\r\n    width: 100%;\n}\n.col-item .info[data-v-2053fdaa] {\r\n    padding: 10px;\r\n    border-radius: 0 0 5px 5px;\r\n    margin-top: 1px;\n}\n.col-item:hover .info[data-v-2053fdaa] {\r\n    background-color: #f5f5dc;\n}\n.col-item .price[data-v-2053fdaa] {\r\n    /*width: 50%;*/\r\n    float: left;\r\n    margin-top: 5px;\n}\n.col-item .price h5[data-v-2053fdaa] {\r\n    line-height: 20px;\r\n    margin: 0;\n}\n.price-text-color[data-v-2053fdaa] {\r\n    color: red;\n}\n.col-item .info .rating[data-v-2053fdaa] {\r\n    color: #777;\n}\n.col-item .rating[data-v-2053fdaa] {\r\n    /*width: 50%;*/\r\n    float: left;\r\n    font-size: 10px;\r\n    text-align: right;\r\n    line-height: 52px;\r\n    margin-bottom: 10px;\r\n    height: 30px;\n}\n.col-item .separator[data-v-2053fdaa] {\r\n    border-top: 1px solid #e1e1e1;\n}\n.clear-left[data-v-2053fdaa] {\r\n    clear: left;\n}\n.col-item .separator p[data-v-2053fdaa] {\r\n    line-height: 20px;\r\n    margin-bottom: 0;\r\n    margin-top: 10px;\r\n    text-align: center;\n}\n.col-item .separator p i[data-v-2053fdaa] {\r\n    margin-right: 5px;\n}\n.col-item .btn-add[data-v-2053fdaa] {\r\n    width: 50%;\r\n    float: left;\n}\n.col-item .btn-add[data-v-2053fdaa] {\r\n    border-right: 1px solid #e1e1e1;\n}\n.col-item .btn-details[data-v-2053fdaa] {\r\n    width: 50%;\r\n    float: left;\r\n    padding-left: 10px;\n}\n.controls[data-v-2053fdaa] {\r\n    margin-top: 20px;\n}\n[data-slide=\"prev\"][data-v-2053fdaa] {\r\n    margin-right: 10px;\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.main_conatainer[data-v-2053fdaa] {\r\n  padding: 0 15rem 0 18rem;\n}\n.click_link[data-v-2053fdaa] {\r\n  cursor: pointer;\n}\n.item_row[data-v-2053fdaa] {\r\n  margin-left: 1rem;\n}\n.col-item[data-v-2053fdaa] {\r\n  border: 1px solid #e1e1e1;\r\n  border-radius: 5px;\r\n  background: #fff;\r\n  margin-bottom: 1rem;\r\n  width: 15.3rem;\n}\n.col-item .photo img[data-v-2053fdaa] {\r\n  margin: 0 auto;\r\n  width: 100%;\n}\n.col-item .info[data-v-2053fdaa] {\r\n  padding: 10px;\r\n  border-radius: 0 0 5px 5px;\r\n  margin-top: 1px;\n}\n.col-item:hover .info[data-v-2053fdaa] {\r\n  background-color: #f5f5dc;\n}\n.col-item .price[data-v-2053fdaa] {\r\n  /*width: 50%;*/\r\n  float: left;\r\n  margin-top: 5px;\n}\n.col-item .price h5[data-v-2053fdaa] {\r\n  line-height: 20px;\r\n  margin: 0;\n}\n.price-text-color[data-v-2053fdaa] {\r\n  color: red;\n}\n.col-item .info .rating[data-v-2053fdaa] {\r\n  color: #777;\n}\n.col-item .rating[data-v-2053fdaa] {\r\n  /*width: 50%;*/\r\n  float: left;\r\n  font-size: 10px;\r\n  text-align: right;\r\n  line-height: 52px;\r\n  margin-bottom: 10px;\r\n  height: 30px;\n}\n.col-item .separator[data-v-2053fdaa] {\r\n  border-top: 1px solid #e1e1e1;\n}\n.clear-left[data-v-2053fdaa] {\r\n  clear: left;\n}\n.col-item .separator p[data-v-2053fdaa] {\r\n  line-height: 20px;\r\n  margin-bottom: 0;\r\n  margin-top: 10px;\r\n  text-align: center;\n}\n.col-item .separator p i[data-v-2053fdaa] {\r\n  margin-right: 5px;\n}\n.col-item .btn-add[data-v-2053fdaa] {\r\n  width: 50%;\r\n  float: left;\n}\n.col-item .btn-add[data-v-2053fdaa] {\r\n  border-right: 1px solid #e1e1e1;\n}\n.col-item .btn-details[data-v-2053fdaa] {\r\n  width: 50%;\r\n  float: left;\r\n  padding-left: 10px;\n}\n.controls[data-v-2053fdaa] {\r\n  margin-top: 20px;\n}\n[data-slide=\"prev\"][data-v-2053fdaa] {\r\n  margin-right: 10px;\n}\n@media only screen and (max-width: 600px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 1rem 0 1.5rem;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 0rem;\n}\n.col-item[data-v-2053fdaa] {\r\n    margin-bottom: 1rem;\r\n    width: 12.4rem;\n}\n}\n@media only screen and (min-width: 600px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 1rem 0 2rem;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 0px;\n}\n.col-item[data-v-2053fdaa] {\r\n    margin-bottom: 1rem;\r\n    width: 15rem;\n}\n}\n@media only screen and (min-width: 768px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 1rem 0 2rem;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 0.5rem;\r\n    margin-top: 1rem;\n}\n.col-item[data-v-2053fdaa] {\r\n    margin-bottom: 0.5rem;\r\n    width: 9rem;\n}\n.col-item .photo img[data-v-2053fdaa] {\r\n  margin: 0 auto;\r\n  width: 80%;\n}\n}\n@media only screen and (min-width: 992px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 2rem 0 2rem;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 0px;\r\n    margin-top: 1rem;\n}\n.col-item[data-v-2053fdaa] {\r\n    margin-bottom: 1rem;\r\n    width: 13rem;\n}\n}\n@media only screen and (min-width: 1200px) {\n.main_conatainer[data-v-2053fdaa] {\r\n    padding: 0 10rem 0 15rem;\n}\n.click_link[data-v-2053fdaa] {\r\n    cursor: pointer;\n}\n.item_row[data-v-2053fdaa] {\r\n    margin-left: 1rem;\n}\n.col-item[data-v-2053fdaa] {\r\n    border: 1px solid #e1e1e1;\r\n    border-radius: 5px;\r\n    background: #fff;\r\n    margin-bottom: 1rem;\r\n    width: 15.3rem;\n}\n.col-item .photo img[data-v-2053fdaa] {\r\n    margin: 0 auto;\r\n    width: 100%;\n}\n.col-item .info[data-v-2053fdaa] {\r\n    padding: 10px;\r\n    border-radius: 0 0 5px 5px;\r\n    margin-top: 1px;\n}\n.col-item:hover .info[data-v-2053fdaa] {\r\n    background-color: #f5f5dc;\n}\n.col-item .price[data-v-2053fdaa] {\r\n    /*width: 50%;*/\r\n    float: left;\r\n    margin-top: 5px;\n}\n.col-item .price h5[data-v-2053fdaa] {\r\n    line-height: 20px;\r\n    margin: 0;\n}\n.price-text-color[data-v-2053fdaa] {\r\n    color: red;\n}\n.col-item .info .rating[data-v-2053fdaa] {\r\n    color: #777;\n}\n.col-item .rating[data-v-2053fdaa] {\r\n    /*width: 50%;*/\r\n    float: left;\r\n    font-size: 10px;\r\n    text-align: right;\r\n    line-height: 52px;\r\n    margin-bottom: 10px;\r\n    height: 30px;\n}\n.col-item .separator[data-v-2053fdaa] {\r\n    border-top: 1px solid #e1e1e1;\n}\n.clear-left[data-v-2053fdaa] {\r\n    clear: left;\n}\n.col-item .separator p[data-v-2053fdaa] {\r\n    line-height: 20px;\r\n    margin-bottom: 0;\r\n    margin-top: 10px;\r\n    text-align: center;\n}\n.col-item .separator p i[data-v-2053fdaa] {\r\n    margin-right: 5px;\n}\n.col-item .btn-add[data-v-2053fdaa] {\r\n    width: 50%;\r\n    float: left;\n}\n.col-item .btn-add[data-v-2053fdaa] {\r\n    border-right: 1px solid #e1e1e1;\n}\n.col-item .btn-details[data-v-2053fdaa] {\r\n    width: 50%;\r\n    float: left;\r\n    padding-left: 10px;\n}\n.controls[data-v-2053fdaa] {\r\n    margin-top: 20px;\n}\n[data-slide=\"prev\"][data-v-2053fdaa] {\r\n    margin-right: 10px;\n}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8117,7 +8168,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg[data-v-1d46d096] {\r\n  height: 70vh;\r\n  margin-bottom: 9rem;\n}\n.nav_container[data-v-1d46d096] {\r\n  padding: 0 10rem 0 10rem;\n}\r\n/*SignIn ad SignUp  Css*/\n.btnn[data-v-1d46d096] {\r\n  padding: 0.5rem;\r\n  color: black;\n}\n.signin[data-v-1d46d096] {\r\n  min-width: 6rem;\r\n  max-width: 50vw;\r\n  font-weight: bolder;\n}\n.signin[data-v-1d46d096]:hover {\r\n  background-color: white;\r\n  border-radius: 2.7rem / 100%;\r\n  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n    0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n  transition: 0.3s;\n}\n.signup[data-v-1d46d096] {\r\n  background-color: white;\r\n  font-weight: bolder;\r\n  min-width: 6rem;\r\n  max-width: 50vw;\r\n  border-radius: 2.7rem / 100%;\r\n\r\n  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n    0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n  transition: 0.3s;\n}\n.signup[data-v-1d46d096]:hover {\r\n  background-color: #ef4a40;\n}\r\n\r\n/*End SignIn ad SignUp  Css*/\r\n\r\n/*nav_position ad SignUp  Css*/\n.nav_position[data-v-1d46d096] {\r\n  margin-top: 2%;\n}\n.nav_item[data-v-1d46d096] {\r\n  text-align: center;\r\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n    \"Lucida Sans\", Arial, sans-serif;\r\n  font-weight: bolder;\r\n  min-width: 6rem;\r\n  max-width: 50vw;\r\n  border-radius: 2.7rem / 100%;\n}\n.rent_now[data-v-1d46d096] {\r\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n    \"Lucida Sans\", Arial, sans-serif;\r\n  font-weight: bolder;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n  background-color: white;\r\n  border-radius: 2.7rem / 100%;\r\n  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n    0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n  transition: 0.3s;\n}\r\n/*end nav_position ad SignUp  Css*/\r\n\r\n/*brand  Css*/\n.brand_container[data-v-1d46d096] {\r\n  display: flex;\r\n  float: left;\n}\n.brand_name[data-v-1d46d096] {\r\n  color: #ef4a40;\r\n  font-family: Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif;\r\n  font-size: 30px;\n}\n.brand_logo[data-v-1d46d096] {\r\n  margin-right: 0.3rem;\r\n  vertical-align: middle;\r\n  width: 45px;\r\n  height: 45px;\n}\nli[data-v-1d46d096] {\r\n  font-family: \"Arial\", Helvetica, sans-serif;\n}\n.imageBikeContainer[data-v-1d46d096] {\r\n  position: relative;\n}\n.imageBike[data-v-1d46d096] {\r\n  width: 15%;\r\n  position: absolute;\r\n  display: block;\r\n  top: 3rem;\r\n  left: 50rem;\r\n  opacity: 0.8;\r\n  transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n  width: 40%;\r\n  position: absolute;\r\n  display: block;\r\n  top: 0px;\r\n  left: 200rem;\r\n  transform: scaleX(-1);\r\n  -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n  -webkit-animation-delay: 0.2s;\r\n  animation: slide-data-v-1d46d096 0.2s forwards;\r\n  animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n    left: 38rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n    left: 38rem;\n}\n}\n.bike_shawdow[data-v-1d46d096] {\r\n  width: 10px;\r\n  height: 20px;\r\n  background-color: transparent;\r\n  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 22.3px 17.9px rgba(0, 0, 0, 0.072);\n}\n.bike_title_container[data-v-1d46d096] {\r\n  padding: 2rem;\r\n  height: 15rem;\r\n  position: absolute;\r\n  display: block;\r\n  top: 6rem;\r\n  left: 18rem;\n}\n.bike_title[data-v-1d46d096] {\r\n  position: relative;\r\n  width: 35rem;\r\n  text-align: left;\n}\n.main_tag[data-v-1d46d096] {\r\n  top: 50rem;\r\n\r\n  font-size: 4rem;\r\n  font-family: Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif;\r\n  font-weight: bolder;\n}\r\n\r\n/*smaller Devices Css*/\n@media only screen and (max-width: 600px) {\n.bg[data-v-1d46d096] {\r\n    height: 38vh;\r\n    margin-bottom: 1rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0 1rem 0 1rem;\n}\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 0;\n}\n.btnn[data-v-1d46d096] {\r\n    padding: 0;\r\n    min-width: 0;\r\n    max-width: 0;\n}\n.nav_item[data-v-1d46d096] {\r\n    font-weight: bolder;\r\n    min-width: 0;\r\n    text-align: left;\r\n    border-radius: 0;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n    background-color: transparent;\r\n    border-radius: 0;\r\n    box-shadow: none;\r\n    transition: 0.3s;\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 50%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 100rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 12rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 12rem;\n}\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 15%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 2rem;\r\n    left: 18rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 10rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1rem;\r\n    left: 1rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    width: 15rem;\n}\n.main_tag[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\r\n    font-weight: bolder;\r\n    font-size: 25px;\n}\n}\n@media only screen and (min-width: 600px) {\n.bg[data-v-1d46d096] {\r\n    height: 38vh;\r\n    margin-bottom: 1rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0 1rem 0 1rem;\n}\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 0;\n}\n.btnn[data-v-1d46d096] {\r\n    padding: 0;\r\n    min-width: 0;\r\n    max-width: 0;\n}\n.nav_item[data-v-1d46d096] {\r\n    font-weight: bolder;\r\n    min-width: 0;\r\n    text-align: left;\r\n    border-radius: 0;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n    background-color: transparent;\r\n    border-radius: 0;\r\n    box-shadow: none;\r\n    transition: 0.3s;\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 20%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1rem;\r\n    left: 21rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 40%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 100rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 18rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 18rem;\n}\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 10rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1rem;\r\n    left: 2.5rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    width: 17rem;\n}\n.main_tag[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\r\n    font-weight: bolder;\r\n    font-size: 28px;\n}\n}\n@media only screen and (min-width: 768px) {\n.bg[data-v-1d46d096] {\r\n    height: 38vh;\r\n    margin-bottom: 1rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0;\n}\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 1rem;\n}\n.btnn[data-v-1d46d096] {\r\n    padding: 0.5rem;\r\n    color: black;\n}\n.nav_item[data-v-1d46d096] {\r\n    text-align: center;\r\n    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n      \"Lucida Sans\", Arial, sans-serif;\r\n    font-weight: bolder;\r\n    min-width: 4rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\n}\n.signin[data-v-1d46d096] {\r\n    min-width: 5rem;\r\n    max-width: 50vw;\r\n    font-weight: bolder;\n}\n.signup[data-v-1d46d096] {\r\n    background-color: white;\r\n    font-weight: bolder;\r\n    min-width: 5rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\r\n\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 22%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1.5rem;\r\n    left: 24rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 45%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 100rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 20rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 20rem;\n}\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 10rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1rem;\r\n    left: 4rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    width: 23rem;\n}\n.main_tag[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\r\n    font-weight: bolder;\r\n    font-size: 35px;\n}\n}\n@media only screen and (min-width: 992px) {\n.bg[data-v-1d46d096] {\r\n    height: 35vh;\r\n    margin-bottom: 1rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0;\n}\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 1rem;\n}\n.btnn[data-v-1d46d096] {\r\n    padding: 0.5rem;\r\n    color: black;\n}\n.nav_item[data-v-1d46d096] {\r\n    text-align: center;\r\n    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n      \"Lucida Sans\", Arial, sans-serif;\r\n    font-weight: bolder;\r\n    min-width: 4rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n    background-color: white;\r\n    border-radius: 2.7rem / 100%;\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.signin[data-v-1d46d096] {\r\n    min-width: 5rem;\r\n    max-width: 50vw;\r\n    font-weight: bolder;\n}\n.signup[data-v-1d46d096] {\r\n    background-color: white;\r\n    font-weight: bolder;\r\n    min-width: 5rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\r\n\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 22%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 2rem;\r\n    left: 30rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 45%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 200rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 24rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 24rem;\n}\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 10rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 3rem;\r\n    left: 10rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    width: 23rem;\n}\n.main_tag[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\r\n    font-weight: bolder;\r\n    font-size: 35px;\n}\n}\n@media only screen and (min-width: 1200px) {\n.bg[data-v-1d46d096] {\r\n    height: 70vh;\r\n    margin-bottom: 9rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0 10rem 0 10rem;\n}\r\n  /*SignIn ad SignUp  Css*/\n.btnn[data-v-1d46d096] {\r\n    padding: 0.5rem;\r\n    color: black;\n}\n.signin[data-v-1d46d096] {\r\n    min-width: 6rem;\r\n    max-width: 50vw;\r\n    font-weight: bolder;\n}\n.signin[data-v-1d46d096]:hover {\r\n    background-color: white;\r\n    border-radius: 2.7rem / 100%;\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.signup[data-v-1d46d096] {\r\n    background-color: white;\r\n    font-weight: bolder;\r\n    min-width: 6rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\r\n\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.signup[data-v-1d46d096]:hover {\r\n    background-color: #ef4a40;\n}\r\n\r\n  /*End SignIn ad SignUp  Css*/\r\n\r\n  /*nav_position ad SignUp  Css*/\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 2%;\n}\n.nav_item[data-v-1d46d096] {\r\n    text-align: center;\r\n    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n      \"Lucida Sans\", Arial, sans-serif;\r\n    font-weight: bolder;\r\n    min-width: 6rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\n}\n.rent_now[data-v-1d46d096] {\r\n    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n      \"Lucida Sans\", Arial, sans-serif;\r\n    font-weight: bolder;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n    background-color: white;\r\n    border-radius: 2.7rem / 100%;\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\r\n  /*end nav_position ad SignUp  Css*/\r\n\r\n  /*brand  Css*/\n.brand_container[data-v-1d46d096] {\r\n    display: flex;\r\n    float: left;\n}\n.brand_name[data-v-1d46d096] {\r\n    color: #ef4a40;\r\n    font-family: Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif;\r\n    font-size: 30px;\n}\n.brand_logo[data-v-1d46d096] {\r\n    margin-right: 0.3rem;\r\n    vertical-align: middle;\r\n    width: 45px;\r\n    height: 45px;\n}\nli[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\n}\n.imageBikeContainer[data-v-1d46d096] {\r\n    position: relative;\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 15%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 3rem;\r\n    left: 50rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 40%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 200rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 38rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 38rem;\n}\n}\n.bike_shawdow[data-v-1d46d096] {\r\n    width: 10px;\r\n    height: 20px;\r\n    background-color: transparent;\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 22.3px 17.9px rgba(0, 0, 0, 0.072);\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 15rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 6rem;\r\n    left: 18rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    position: relative;\r\n    width: 35rem;\r\n    text-align: left;\n}\n.main_tag[data-v-1d46d096] {\r\n    top: 50rem;\r\n\r\n    font-size: 4rem;\r\n    font-family: Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif;\r\n    font-weight: bolder;\n}\n}\r\n\r\n/* .bg{\r\n\r\n   \r\n   \r\n     background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url(\"https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg\")no-repeat center center fixed;\r\n    -webkit-background-size: cover;\r\n    -moz-background-size: cover;\r\n    -o-background-size: cover;\r\n    background-size: cover;\r\n} */\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bg[data-v-1d46d096] {\r\n  height: 70vh;\r\n  margin-bottom: 9rem;\n}\n.nav_container[data-v-1d46d096] {\r\n  padding: 0 10rem 0 10rem;\n}\r\n/*SignIn ad SignUp  Css*/\n.btnn[data-v-1d46d096] {\r\n  padding: 0.5rem;\r\n  color: black;\n}\n.signin[data-v-1d46d096] {\r\n  min-width: 6rem;\r\n  max-width: 50vw;\r\n  font-weight: bolder;\n}\n.signin[data-v-1d46d096]:hover {\r\n  background-color: white;\r\n  border-radius: 2.7rem / 100%;\r\n  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n    0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n  transition: 0.3s;\n}\n.signup[data-v-1d46d096] {\r\n  background-color: white;\r\n  font-weight: bolder;\r\n  min-width: 6rem;\r\n  max-width: 50vw;\r\n  border-radius: 2.7rem / 100%;\r\n\r\n  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n    0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n  transition: 0.3s;\n}\n.signup[data-v-1d46d096]:hover {\r\n  background-color: #ef4a40;\n}\r\n\r\n/*End SignIn ad SignUp  Css*/\r\n\r\n/*nav_position ad SignUp  Css*/\n.nav_position[data-v-1d46d096] {\r\n  margin-top: 2%;\n}\n.nav_item[data-v-1d46d096] {\r\n  text-align: center;\r\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n    \"Lucida Sans\", Arial, sans-serif;\r\n  font-weight: bolder;\r\n  min-width: 6rem;\r\n  max-width: 50vw;\r\n  border-radius: 2.7rem / 100%;\n}\n.rent_now[data-v-1d46d096] {\r\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n    \"Lucida Sans\", Arial, sans-serif;\r\n  font-weight: bolder;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n  background-color: white;\r\n  border-radius: 2.7rem / 100%;\r\n  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n    0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n  transition: 0.3s;\n}\r\n/*end nav_position ad SignUp  Css*/\r\n\r\n/*brand  Css*/\n.brand_container[data-v-1d46d096] {\r\n  display: flex;\r\n  float: left;\n}\n.brand_name[data-v-1d46d096] {\r\n  color: #ef4a40;\r\n  font-family: Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif;\r\n  font-size: 30px;\n}\n.brand_logo[data-v-1d46d096] {\r\n  margin-right: 0.3rem;\r\n  vertical-align: middle;\r\n  width: 45px;\r\n  height: 45px;\n}\nli[data-v-1d46d096] {\r\n  font-family: \"Arial\", Helvetica, sans-serif;\n}\n.imageBikeContainer[data-v-1d46d096] {\r\n  position: relative;\n}\n.imageBike[data-v-1d46d096] {\r\n  width: 15%;\r\n  position: absolute;\r\n  display: block;\r\n  top: 3rem;\r\n  left: 50rem;\r\n  opacity: 0.8;\r\n  transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n  width: 40%;\r\n  position: absolute;\r\n  display: block;\r\n  top: 0px;\r\n  left: 200rem;\r\n  transform: scaleX(-1);\r\n  -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n  -webkit-animation-delay: 0.2s;\r\n  animation: slide-data-v-1d46d096 0.2s forwards;\r\n  animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n    left: 38rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n    left: 38rem;\n}\n}\n.bike_shawdow[data-v-1d46d096] {\r\n  width: 10px;\r\n  height: 20px;\r\n  background-color: transparent;\r\n  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 22.3px 17.9px rgba(0, 0, 0, 0.072);\n}\n.bike_title_container[data-v-1d46d096] {\r\n  padding: 2rem;\r\n  height: 15rem;\r\n  position: absolute;\r\n  display: block;\r\n  top: 6rem;\r\n  left: 18rem;\n}\n.bike_title[data-v-1d46d096] {\r\n  position: relative;\r\n  width: 35rem;\r\n  text-align: left;\n}\n.main_tag[data-v-1d46d096] {\r\n  top: 50rem;\r\n\r\n  font-size: 4rem;\r\n  font-family: Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif;\r\n  font-weight: bolder;\n}\r\n\r\n/*smaller Devices Css*/\n@media only screen and (max-width: 600px) {\n.bg[data-v-1d46d096] {\r\n    height: 38vh;\r\n    margin-bottom: 1rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0 1rem 0 1rem;\n}\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 0;\n}\n.btnn[data-v-1d46d096] {\r\n    padding: 0;\r\n    min-width: 0;\r\n    max-width: 0;\n}\n.nav_item[data-v-1d46d096] {\r\n    font-weight: bolder;\r\n    min-width: 0;\r\n    text-align: left;\r\n    border-radius: 0;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n    background-color: transparent;\r\n    border-radius: 0;\r\n    box-shadow: none;\r\n    transition: 0.3s;\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 50%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 100rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 12rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 12rem;\n}\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 15%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 2rem;\r\n    left: 18rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 10rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1rem;\r\n    left: 1rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    width: 15rem;\n}\n.main_tag[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\r\n    font-weight: bolder;\r\n    font-size: 25px;\n}\n}\n@media only screen and (min-width: 600px) {\n.bg[data-v-1d46d096] {\r\n    height: 38vh;\r\n    margin-bottom: 1rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0 1rem 0 1rem;\n}\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 0;\n}\n.btnn[data-v-1d46d096] {\r\n    padding: 0;\r\n    min-width: 0;\r\n    max-width: 0;\n}\n.nav_item[data-v-1d46d096] {\r\n    font-weight: bolder;\r\n    min-width: 0;\r\n    text-align: left;\r\n    border-radius: 0;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n    background-color: transparent;\r\n    border-radius: 0;\r\n    box-shadow: none;\r\n    transition: 0.3s;\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 20%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1rem;\r\n    left: 21rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 40%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 100rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 18rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 18rem;\n}\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 10rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1rem;\r\n    left: 2.5rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    width: 17rem;\n}\n.main_tag[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\r\n    font-weight: bolder;\r\n    font-size: 28px;\n}\n}\n@media only screen and (min-width: 768px) {\n.bg[data-v-1d46d096] {\r\n    height: 38vh;\r\n    \r\n    margin-bottom: 1rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0;\n}\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 1rem;\n}\n.btnn[data-v-1d46d096] {\r\n    padding: 0.5rem;\r\n    color: black;\n}\n.nav_item[data-v-1d46d096] {\r\n    text-align: center;\r\n    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n      \"Lucida Sans\", Arial, sans-serif;\r\n    font-weight: bolder;\r\n    min-width: 4rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\n}\n.signin[data-v-1d46d096] {\r\n    min-width: 5rem;\r\n    max-width: 50vw;\r\n    font-weight: bolder;\n}\n.signup[data-v-1d46d096] {\r\n    background-color: white;\r\n    font-weight: bolder;\r\n    min-width: 5rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\r\n\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 22%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1.5rem;\r\n    left: 24rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 45%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 100rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 20rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 20rem;\n}\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 10rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 1rem;\r\n    left: 4rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    width: 23rem;\n}\n.main_tag[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\r\n    font-weight: bolder;\r\n    font-size: 35px;\n}\n}\n@media only screen and (min-width: 992px) {\n.bg[data-v-1d46d096] {\r\n    height: 35vh;\r\n    margin-bottom: 1rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0 4rem 0 3rem;\n}\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 1rem;\n}\n.btnn[data-v-1d46d096] {\r\n    padding: 0.5rem;\r\n    color: black;\n}\n.nav_item[data-v-1d46d096] {\r\n    text-align: center;\r\n    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n      \"Lucida Sans\", Arial, sans-serif;\r\n    font-weight: bolder;\r\n    min-width: 4rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n    background-color: white;\r\n    border-radius: 2.7rem / 100%;\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.signin[data-v-1d46d096] {\r\n    min-width: 5rem;\r\n    max-width: 50vw;\r\n    font-weight: bolder;\n}\n.signup[data-v-1d46d096] {\r\n    background-color: white;\r\n    font-weight: bolder;\r\n    min-width: 5rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\r\n\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 22%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 2rem;\r\n    left: 30rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 45%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 200rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 24rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 24rem;\n}\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 10rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 3rem;\r\n    left: 10rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    width: 23rem;\n}\n.main_tag[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\r\n    font-weight: bolder;\r\n    font-size: 35px;\n}\n}\n@media only screen and (min-width: 1200px) {\n.bg[data-v-1d46d096] {\r\n    height: 70vh;\r\n    margin-bottom: 9rem;\n}\n.nav_container[data-v-1d46d096] {\r\n    padding: 0 10rem 0 10rem;\n}\r\n  /*SignIn ad SignUp  Css*/\n.btnn[data-v-1d46d096] {\r\n    padding: 0.5rem;\r\n    color: black;\n}\n.signin[data-v-1d46d096] {\r\n    min-width: 6rem;\r\n    max-width: 50vw;\r\n    font-weight: bolder;\n}\n.signin[data-v-1d46d096]:hover {\r\n    background-color: white;\r\n    border-radius: 2.7rem / 100%;\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.signup[data-v-1d46d096] {\r\n    background-color: white;\r\n    font-weight: bolder;\r\n    min-width: 6rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\r\n\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\n.signup[data-v-1d46d096]:hover {\r\n    background-color: #ef4a40;\n}\r\n\r\n  /*End SignIn ad SignUp  Css*/\r\n\r\n  /*nav_position ad SignUp  Css*/\n.nav_position[data-v-1d46d096] {\r\n    margin-top: 2%;\n}\n.nav_item[data-v-1d46d096] {\r\n    text-align: center;\r\n    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n      \"Lucida Sans\", Arial, sans-serif;\r\n    font-weight: bolder;\r\n    min-width: 6rem;\r\n    max-width: 50vw;\r\n    border-radius: 2.7rem / 100%;\n}\n.rent_now[data-v-1d46d096] {\r\n    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n      \"Lucida Sans\", Arial, sans-serif;\r\n    font-weight: bolder;\n}\n.nav_item[data-v-1d46d096]:hover {\r\n    background-color: white;\r\n    border-radius: 2.7rem / 100%;\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072);\r\n    transition: 0.3s;\n}\r\n  /*end nav_position ad SignUp  Css*/\r\n\r\n  /*brand  Css*/\n.brand_container[data-v-1d46d096] {\r\n    display: flex;\r\n    float: left;\n}\n.brand_name[data-v-1d46d096] {\r\n    color: #ef4a40;\r\n    font-family: Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif;\r\n    font-size: 30px;\n}\n.brand_logo[data-v-1d46d096] {\r\n    margin-right: 0.3rem;\r\n    vertical-align: middle;\r\n    width: 45px;\r\n    height: 45px;\n}\nli[data-v-1d46d096] {\r\n    font-family: \"Arial\", Helvetica, sans-serif;\n}\n.imageBikeContainer[data-v-1d46d096] {\r\n    position: relative;\n}\n.imageBike[data-v-1d46d096] {\r\n    width: 15%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 3rem;\r\n    left: 50rem;\r\n    opacity: 0.8;\r\n    transform: scaleX(-1);\n}\n.imageBike1[data-v-1d46d096] {\r\n    width: 40%;\r\n    position: absolute;\r\n    display: block;\r\n    top: 0px;\r\n    left: 200rem;\r\n    transform: scaleX(-1);\r\n    -webkit-animation: slide-data-v-1d46d096 0.2s forwards;\r\n    -webkit-animation-delay: 0.2s;\r\n    animation: slide-data-v-1d46d096 0.2s forwards;\r\n    animation-delay: 0.2s;\n}\n@-webkit-keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 38rem;\n}\n}\n@keyframes slide-data-v-1d46d096 {\n100% {\r\n      left: 38rem;\n}\n}\n.bike_shawdow[data-v-1d46d096] {\r\n    width: 10px;\r\n    height: 20px;\r\n    background-color: transparent;\r\n    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),\r\n      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),\r\n      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 22.3px 17.9px rgba(0, 0, 0, 0.072);\n}\n.bike_title_container[data-v-1d46d096] {\r\n    padding: 2rem;\r\n    height: 15rem;\r\n    position: absolute;\r\n    display: block;\r\n    top: 6rem;\r\n    left: 18rem;\n}\n.bike_title[data-v-1d46d096] {\r\n    position: relative;\r\n    width: 35rem;\r\n    text-align: left;\n}\n.main_tag[data-v-1d46d096] {\r\n    top: 50rem;\r\n\r\n    font-size: 4rem;\r\n    font-family: Impact, Haettenschweiler, \"Arial Narrow Bold\", sans-serif;\r\n    font-weight: bolder;\n}\n}\r\n\r\n/* .bg{\r\n\r\n   \r\n   \r\n     background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url(\"https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg\")no-repeat center center fixed;\r\n    -webkit-background-size: cover;\r\n    -moz-background-size: cover;\r\n    -o-background-size: cover;\r\n    background-size: cover;\r\n} */\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -44843,192 +44894,171 @@ var render = function() {
                     _c(
                       "div",
                       { staticClass: "row item_row" },
-                      _vm._l(_vm.data.bikes, function(bike) {
-                        return _c("span", { key: bike.id }, [
-                          bike.bike_category_categ_id == item.categ_id &&
-                          bike.availability == "Available"
-                            ? _c("div", { staticClass: "col-sm-12" }, [
-                                _c("div", { staticClass: "col-item" }, [
-                                  _c("div", { staticClass: "photo" }, [
-                                    _c("img", {
-                                      staticClass: "img-responsive",
-                                      attrs: {
-                                        src: "../images/" + bike.img,
-                                        alt: "a"
-                                      }
-                                    })
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "info" }, [
-                                    _c("div", { staticClass: "row" }, [
-                                      _c(
-                                        "div",
-                                        { staticClass: "price col-md-6" },
-                                        [
-                                          _c("p", [
-                                            _vm._v(_vm._s(bike.bike_name))
-                                          ]),
-                                          _vm._v(" "),
-                                          _c(
-                                            "h5",
-                                            { staticClass: "price-text-color" },
-                                            [
-                                              _vm._v(
-                                                "\n                        " +
-                                                  _vm._s(bike.rent_price)
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "rating hidden-sm col-md-6"
-                                        },
-                                        [
-                                          bike.rating > 0 && bike.rating == 5
-                                            ? _c(
-                                                "span",
-                                                _vm._l(5, function(n) {
-                                                  return _c("i", {
-                                                    staticClass:
-                                                      "price-text-color fa fa-star"
-                                                  })
-                                                }),
-                                                0
-                                              )
-                                            : bike.rating > 0 &&
-                                              bike.rating == 4
-                                            ? _c(
-                                                "span",
-                                                [
-                                                  _vm._l(4, function(n) {
-                                                    return _c("i", {
-                                                      staticClass:
-                                                        "price-text-color fa fa-star"
-                                                    })
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _vm._l(1, function(n) {
-                                                    return _c("i", {
-                                                      staticClass: "fa fa-star"
-                                                    })
-                                                  })
-                                                ],
-                                                2
-                                              )
-                                            : bike.rating > 0 &&
-                                              bike.rating == 3
-                                            ? _c(
-                                                "span",
-                                                [
-                                                  _vm._l(3, function(n) {
-                                                    return _c("i", {
-                                                      staticClass:
-                                                        "price-text-color fa fa-star"
-                                                    })
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _vm._l(2, function(n) {
-                                                    return _c("i", {
-                                                      staticClass: "fa fa-star"
-                                                    })
-                                                  })
-                                                ],
-                                                2
-                                              )
-                                            : bike.rating > 0 &&
-                                              bike.rating == 2
-                                            ? _c(
-                                                "span",
-                                                [
-                                                  _vm._l(2, function(n) {
-                                                    return _c("i", {
-                                                      staticClass:
-                                                        "price-text-color fa fa-star"
-                                                    })
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _vm._l(3, function(n) {
-                                                    return _c("i", {
-                                                      staticClass: "fa fa-star"
-                                                    })
-                                                  })
-                                                ],
-                                                2
-                                              )
-                                            : bike.rating > 0 &&
-                                              bike.rating == 1
-                                            ? _c(
-                                                "span",
-                                                [
-                                                  _vm._l(1, function(n) {
-                                                    return _c("i", {
-                                                      staticClass:
-                                                        "price-text-color fa fa-star"
-                                                    })
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _vm._l(4, function(n) {
-                                                    return _c("i", {
-                                                      staticClass: "fa fa-star"
-                                                    })
-                                                  })
-                                                ],
-                                                2
-                                              )
-                                            : _c(
-                                                "span",
-                                                _vm._l(5, function(n) {
-                                                  return _c("i", {
-                                                    staticClass: "fa fa-star"
-                                                  })
-                                                }),
-                                                0
-                                              )
-                                        ]
-                                      )
-                                    ]),
+                      _vm._l(_vm.data.bikes[index], function(bike, index1) {
+                        return _c("span", { key: index1 }, [
+                          _c("div", { staticClass: "col-sm-12" }, [
+                            _c("div", { staticClass: "col-item" }, [
+                              _c("div", { staticClass: "photo" }, [
+                                _c("img", {
+                                  staticClass: "img-responsive",
+                                  attrs: {
+                                    src: "../images/" + bike.img,
+                                    alt: "a"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "info" }, [
+                                _c("div", { staticClass: "row" }, [
+                                  _c("div", { staticClass: "price col-md-6" }, [
+                                    _c("p", [_vm._v(_vm._s(bike.bike_name))]),
                                     _vm._v(" "),
                                     _c(
-                                      "div",
-                                      { staticClass: "separator clear-left" },
+                                      "h5",
+                                      { staticClass: "price-text-color" },
                                       [
-                                        _vm._m(1, true),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          { staticClass: "btn-details" },
-                                          [
-                                            _c("i", {
-                                              staticClass: "fa fa-list"
-                                            }),
-                                            _c(
-                                              "a",
-                                              {
-                                                staticClass:
-                                                  "hidden-sm click_link",
-                                                on: {
-                                                  click: function($event) {
-                                                    return _vm.RentBike(bike.id)
-                                                  }
-                                                }
-                                              },
-                                              [_vm._v("More details")]
-                                            )
-                                          ]
+                                        _vm._v(
+                                          "\n                        " +
+                                            _vm._s(bike.rent_price)
                                         )
                                       ]
-                                    ),
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "rating hidden-sm col-md-6"
+                                    },
+                                    [
+                                      bike.rating > 0 && bike.rating == 5
+                                        ? _c(
+                                            "span",
+                                            _vm._l(5, function(n) {
+                                              return _c("i", {
+                                                staticClass:
+                                                  "price-text-color fa fa-star"
+                                              })
+                                            }),
+                                            0
+                                          )
+                                        : bike.rating > 0 && bike.rating == 4
+                                        ? _c(
+                                            "span",
+                                            [
+                                              _vm._l(4, function(n) {
+                                                return _c("i", {
+                                                  staticClass:
+                                                    "price-text-color fa fa-star"
+                                                })
+                                              }),
+                                              _vm._v(" "),
+                                              _vm._l(1, function(n) {
+                                                return _c("i", {
+                                                  staticClass: "fa fa-star"
+                                                })
+                                              })
+                                            ],
+                                            2
+                                          )
+                                        : bike.rating > 0 && bike.rating == 3
+                                        ? _c(
+                                            "span",
+                                            [
+                                              _vm._l(3, function(n) {
+                                                return _c("i", {
+                                                  staticClass:
+                                                    "price-text-color fa fa-star"
+                                                })
+                                              }),
+                                              _vm._v(" "),
+                                              _vm._l(2, function(n) {
+                                                return _c("i", {
+                                                  staticClass: "fa fa-star"
+                                                })
+                                              })
+                                            ],
+                                            2
+                                          )
+                                        : bike.rating > 0 && bike.rating == 2
+                                        ? _c(
+                                            "span",
+                                            [
+                                              _vm._l(2, function(n) {
+                                                return _c("i", {
+                                                  staticClass:
+                                                    "price-text-color fa fa-star"
+                                                })
+                                              }),
+                                              _vm._v(" "),
+                                              _vm._l(3, function(n) {
+                                                return _c("i", {
+                                                  staticClass: "fa fa-star"
+                                                })
+                                              })
+                                            ],
+                                            2
+                                          )
+                                        : bike.rating > 0 && bike.rating == 1
+                                        ? _c(
+                                            "span",
+                                            [
+                                              _vm._l(1, function(n) {
+                                                return _c("i", {
+                                                  staticClass:
+                                                    "price-text-color fa fa-star"
+                                                })
+                                              }),
+                                              _vm._v(" "),
+                                              _vm._l(4, function(n) {
+                                                return _c("i", {
+                                                  staticClass: "fa fa-star"
+                                                })
+                                              })
+                                            ],
+                                            2
+                                          )
+                                        : _c(
+                                            "span",
+                                            _vm._l(5, function(n) {
+                                              return _c("i", {
+                                                staticClass: "fa fa-star"
+                                              })
+                                            }),
+                                            0
+                                          )
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "separator clear-left" },
+                                  [
+                                    _vm._m(1, true),
                                     _vm._v(" "),
-                                    _c("div", { staticClass: "clearfix" })
-                                  ])
-                                ])
+                                    _c("p", { staticClass: "btn-details" }, [
+                                      _c("i", { staticClass: "fa fa-list" }),
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "hidden-sm click_link",
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.RentBike(bike.id)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("More details")]
+                                      )
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "clearfix" })
                               ])
-                            : _vm._e()
+                            ])
+                          ])
                         ])
                       }),
                       0
@@ -45321,128 +45351,132 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "pt-4 my-md-5 pt-md-5 border-top" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 col-md" }, [
-          _c("img", {
-            staticClass: "mb-2",
-            attrs: {
-              src:
-                "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg",
-              alt: "",
-              width: "24",
-              height: "24"
-            }
-          }),
+    return _c(
+      "footer",
+      { staticClass: "pt-4 my-md-5 pt-md-5 border-top pl-3 pr-3" },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12 col-md" }, [
+            _c("img", {
+              staticClass: "mb-2",
+              attrs: {
+                src:
+                  "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg",
+                alt: "",
+                width: "24",
+                height: "24"
+              }
+            }),
+            _vm._v(" "),
+            _c("small", { staticClass: "d-block mb-3 text-muted" }, [
+              _vm._v("© 2017-2018")
+            ])
+          ]),
           _vm._v(" "),
-          _c("small", { staticClass: "d-block mb-3 text-muted" }, [
-            _vm._v("© 2017-2018")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-6 col-md" }, [
-          _c("h5", [_vm._v("Features")]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "list-unstyled text-small" }, [
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Cool stuff")
-              ])
-            ]),
+          _c("div", { staticClass: "col-6 col-md" }, [
+            _c("h5", [_vm._v("Features")]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Random feature")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Team feature")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Stuff for developers")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Another one")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Last time")
+            _c("ul", { staticClass: "list-unstyled text-small" }, [
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Cool stuff")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Random feature")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Team feature")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Stuff for developers")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Another one")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Last time")
+                ])
               ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-6 col-md" }, [
-          _c("h5", [_vm._v("Resources")]),
+          ]),
           _vm._v(" "),
-          _c("ul", { staticClass: "list-unstyled text-small" }, [
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Resource")
-              ])
-            ]),
+          _c("div", { staticClass: "col-6 col-md" }, [
+            _c("h5", [_vm._v("Resources")]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Resource name")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Another resource")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Final resource")
+            _c("ul", { staticClass: "list-unstyled text-small" }, [
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Resource")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Resource name")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Another resource")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Final resource")
+                ])
               ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-6 col-md" }, [
-          _c("h5", [_vm._v("About")]),
+          ]),
           _vm._v(" "),
-          _c("ul", { staticClass: "list-unstyled text-small" }, [
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Team")
-              ])
-            ]),
+          _c("div", { staticClass: "col-6 col-md" }, [
+            _c("h5", [_vm._v("About")]),
             _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Locations")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Privacy")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-                _vm._v("Terms")
+            _c("ul", { staticClass: "list-unstyled text-small" }, [
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Team")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Locations")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Privacy")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
+                  _vm._v("Terms")
+                ])
               ])
             ])
           ])
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
